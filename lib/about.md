@@ -1,0 +1,1 @@
+This is lib subdirectory, within which some server-side logic is be placed.

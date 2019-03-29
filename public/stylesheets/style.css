@@ -1,0 +1,58 @@
+/* Style-settings for <body>-tag */
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/* color setting for links */
+a {
+    color: #00B7FF
+}
+
+/* Application is displayed at 800 pixel width and centered horizontally */
+#content {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Area where current room name is displayed */
+#room {
+    background-color: #DDD;
+    margin-bottom: 1em;
+}
+
+/* Message display area is 690 pixels in width and 300 pixels in height */
+#messages {
+    width: 690px;
+    height: 300px;
+    overflow: auto; /* Autoscrolls if message-area is filled with content */
+    background-color: #EEE;
+    margin-bottom: 1em;
+    margin-right: 10px;
+}
+
+#room-list {
+    float: right;
+    width: 100px;
+    height: 300px;
+    overflow: auto;
+}
+
+#room-list div {
+    border-bottom: 1px solid #EEE;
+}
+
+#room-list div:hover {
+    background-color: #DDD;
+}
+
+#send-message {
+    width: 700px;
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+#help {
+    font: 10px "Lucia Grande", Helvetica, Arial, sans-serif;
+}

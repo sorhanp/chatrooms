@@ -1,0 +1,1 @@
+This is publib subdirectory, where client-side files are placed.

@@ -1,0 +1,43 @@
+<!-- This is base HTML-file of multiroom-chat -->
+<!doctype <!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible" content="IE=edge'>
+    <title>Chatrooms</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" media="screen" href='/stylesheets/style.css'></link>
+</head>
+<body>
+    <!-- Start of div-elements, which display application content -->
+    <div id='content'>
+        <div id='room'></div> <!-- Current room is displayed here -->
+        <div id='room-list'></div> <!-- Available room(s) is/are displayed here -->
+        <div id='messages'></div><!-- Chat messages are displayed here -->
+
+        <form id='send-form'>
+            <!-- Form, which is used to enter commands and messages -->
+            <input id='send-message' /> 
+            <input id='send-button' type='submit', value='Send' />
+
+            <div id='help'>
+                Chat commands:
+                <ul>
+                    <li>Change nickname: <code>/nick [username]</code></li>
+                    <li>Join/create room: <code>/join [roomname]</code></li>
+                </ul>
+            </div><!-- /.help -->
+        </form> <!-- /.send-form -->
+    </div> <!-- /.content -->
+
+    <!-- Load external client-side Javascript-files -->
+    <script src='/socket.io/socket.io.js' type='text/javascript'></script><!-- For Socket.IO functionality -->
+    <script src='http://code.jquery.com/jquery-1.8.0.min.js' type='text/javascript'></script> <!-- For jQuery DOM manipulation -->
+
+    <!-- Load internal client-side files for chat functionalities  -->
+    <script src='/javascripts/chat.js' type='text/javascript'></script>
+    <script src='/javascripts/chat_ui.js' type='text/javascript'></script>
+    <!-- End of client-side Javascript-files -->
+</body>
+</html>

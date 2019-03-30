@@ -1,6 +1,6 @@
 {
     "name": "chatrooms",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Simple web-based chatroom-application based and improved on the design from book Node.js in Action, First Edition by Mike Cantelon, Marc Harter, T.J. Holowaychuk and Nathan Rajlich.",
     "dependencies": {
         "socket.io": "~2.2.0",

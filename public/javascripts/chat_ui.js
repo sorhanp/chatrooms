@@ -87,8 +87,18 @@ $(document).ready(function() {
         });
     });
 
-    setInterval(function() { //Request roomlist each second
+    socket.on('users', function(users) { //Print users
+        $('#user-list').empty();
+        
+        for (var user in users) {
+            $('#user-list').append(divEscapedContentElement(users[user]));
+        }
+
+    });
+
+    setInterval(function() { //Request room- and userlists each second
         socket.emit('rooms');
+        socket.emit('users');
     }, 1000);
 
     $('#send-message').focus();

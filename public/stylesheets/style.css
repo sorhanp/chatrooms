@@ -24,7 +24,7 @@ a {
 
 /* Message display area is 690 pixels in width and 300 pixels in height */
 #messages {
-    width: 690px;
+    width: 590px;
     height: 300px;
     overflow: auto; /* Autoscrolls if message-area is filled with content */
     background-color: #EEE;
@@ -44,6 +44,21 @@ a {
 }
 
 #room-list div:hover {
+    background-color: #DDD;
+}
+
+#user-list {
+    float: left;
+    width: 100px;
+    height: 300px;
+    overflow: auto;
+}
+
+#user-list div {
+    border-bottom: 1px solid #EEE;
+}
+
+#user-list div:hover {
     background-color: #DDD;
 }
 

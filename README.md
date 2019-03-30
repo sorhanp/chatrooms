@@ -12,6 +12,8 @@ Changes from the original design:
 
 * Features:
     * Block users trying to join same room again and inform about it on chat.
+    * Differentiate first time connection with a function when joining the lobby, rather than using default room change-function
+    * Display user names currently in current chat room
 
 Something to fix from migration:
 * [Default room][defaultroom_socketio] creates a room with random, unguessable, unique identifier. Fix by either removing the feature or hiding the rooms with that identfier.
@@ -21,7 +23,7 @@ Planned changes from the original design:
     * Add timestamps to messages
     * Add highlight for your own messages
     * Add autoscrolling for application messages
+    * Add autoscrolling for other users messages
     * Add notification of users leaving
-    * Display user names currently in chat
     * Display to which room was changed
 

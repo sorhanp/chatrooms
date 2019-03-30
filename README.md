@@ -9,14 +9,14 @@ Changes from the original design:
 * Security:
     * [Migrated][migrating_socketio] to current up-to-date (2.2.0) version of Socket.IO (was: 0.9.6).
     * [Mime][mime] upgraded from 1.2.7 to current up-to-date (2.4.0) version.
+    * Migration changed the [Default room][defaultroom_socketio] behavior. Socket.IO now creates a room with random, unguessable, unique identifier. Fixed this by leaving from the room when user connects
 
 * Features:
     * Block users trying to join same room again and inform about it on chat.
     * Differentiate first time connection with a function when joining the lobby, rather than using default room change-function
     * Display user names currently in current chat room
 
-Something to fix from migration:
-* [Default room][defaultroom_socketio] creates a room with random, unguessable, unique identifier. Fix by either removing the feature or hiding the rooms with that identfier.
+
 
 Planned changes from the original design:
 * Features:

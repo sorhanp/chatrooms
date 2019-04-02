@@ -21,6 +21,7 @@ function processUserInput(chatApp, socket) {
         systemMessage = chatApp.processCommand(message);
         if (systemMessage) {
             $('#messages').append(divSystemContentElement(systemMessage));
+            $('#messages').scrollTop($('#messages').prop('scrollHeight'));
         }
     }
     else { //...if not, send as a message to users
@@ -51,6 +52,7 @@ $(document).ready(function() {
             message = result.message;
         }
         $('#messages').append(divSystemContentElement(message));
+        $('#messages').scrollTop($('#messages').prop('scrollHeight'));
     });
 
     socket.on('joinResult', function(result) { //Print result of room change
@@ -65,11 +67,13 @@ $(document).ready(function() {
             message = result.message;
         }
         $('#messages').append(divSystemContentElement(message));
+        $('#messages').scrollTop($('#messages').prop('scrollHeight'));
     });
 
     socket.on('message', function(message) { //Print message
         var newElement = $('<div></div>').text(message.text);
         $('#messages').append(newElement);
+        $('#messages').scrollTop($('#messages').prop('scrollHeight'));
     });
 
     socket.on('rooms', function(rooms) { //Print available rooms

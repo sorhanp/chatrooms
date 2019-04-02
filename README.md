@@ -15,15 +15,15 @@ Changes from the original design:
     * Block users trying to join same room again and inform about it on chat.
     * Differentiate first time connection with a function when joining the lobby, rather than using default room change-function
     * Display user names currently in current chat room
-
+    * Added autoscrolling for application messages
+    * Added autoscrolling for other users messages
 
 
 Planned changes from the original design:
 * Features:
     * Add timestamps to messages
     * Add highlight for your own messages
-    * Add autoscrolling for application messages
-    * Add autoscrolling for other users messages
-    * Add notification of users leaving
+    * Add notification of users leaving a room
+    * Add notification of users leaving the chat
     * Display to which room was changed
 

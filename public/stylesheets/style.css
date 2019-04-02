@@ -32,6 +32,10 @@ a {
     margin-right: 10px;
 }
 
+#messages .ownmessage {
+    font-weight: bold;
+}
+
 #room-list {
     float: right;
     width: 100px;

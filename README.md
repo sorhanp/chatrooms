@@ -17,12 +17,12 @@ Changes from the original design:
     * Display user names currently in current chat room
     * Added autoscrolling for application messages
     * Added autoscrolling for other users messages
+    * Added highlight for your own messages
 
 
 Planned changes from the original design:
 * Features:
     * Add timestamps to messages
-    * Add highlight for your own messages
     * Add notification of users leaving a room
     * Add notification of users leaving the chat
     * Display to which room was changed

@@ -4,7 +4,7 @@ Following functions are used to display text data.
 
 //This function will be used for untrusted data, such as user inputs
 function divEscapedContentElement(message) {
-    return $('<div></div>').text(message);
+    return $('<div class = ownmessage></div>').text(message);
 };
 
 //This function will be used for trusted data
@@ -26,7 +26,7 @@ function processUserInput(chatApp, socket) {
     }
     else { //...if not, send as a message to users
         chatApp.sendMessage($('#room').text(), message); //Broadcast the input
-        $('#messages').append(divEscapedContentElement(message));
+        $('#messages').append(divEscapedContentElement("You: " + message));
         $('#messages').scrollTop($('#messages').prop('scrollHeight'));
     }
 

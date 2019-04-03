@@ -12,6 +12,23 @@ function divSystemContentElement(message) {
     return $('<div></div>').html('<i>' + message + '</i>');
 };
 
+//Function for printing out timestamps to user messages and system message
+function getTimestamp() {
+    var time = new Date(); //Get local time from users browser
+
+    //Transform hours to HH:DD:SS format since getHours, getMinutes and getSeconds print out single digits. 
+    //For example 01:02:03 becomes 1:2:3 without transforming
+    var hour = time.getHours();
+    hour = (hour < 10 ? "0" : "") + hour;
+    var min  = time.getMinutes();
+    min = (min < 10 ? "0" : "") + min;
+    var sec  = time.getSeconds();
+    sec = (sec < 10 ? "0" : "") + sec;
+
+    return "[" + hour + ":" + min + ":" + sec + "] ";
+
+}
+
 //Function for processing user input
 function processUserInput(chatApp, socket) {
     var message = $('#send-message').val();
@@ -20,13 +37,13 @@ function processUserInput(chatApp, socket) {
     if (message.charAt(0) == '/') { //Statement to check, if input begins with /-character...
         systemMessage = chatApp.processCommand(message);
         if (systemMessage) {
-            $('#messages').append(divSystemContentElement(systemMessage));
+            $('#messages').append(divSystemContentElement(getTimestamp() + systemMessage));
             $('#messages').scrollTop($('#messages').prop('scrollHeight'));
         }
     }
     else { //...if not, send as a message to users
         chatApp.sendMessage($('#room').text(), message); //Broadcast the input
-        $('#messages').append(divEscapedContentElement("You: " + message));
+        $('#messages').append(divEscapedContentElement(getTimestamp() + "You: " + message));
         $('#messages').scrollTop($('#messages').prop('scrollHeight'));
     }
 
@@ -43,35 +60,35 @@ $(document).ready(function() {
     var chatApp = new Chat(socket);
 
     socket.on('nameResult', function(result) {
-        var message;
+        var message = getTimestamp();
 
         if (result.success){
-            message = 'You are now known as ' + result.name + '.'; //Print result of username change
+            message += 'You are now known as ' + result.name + '.'; //Print result of username change
         }
         else{
-            message = result.message;
+            message += result.message;
         }
         $('#messages').append(divSystemContentElement(message));
         $('#messages').scrollTop($('#messages').prop('scrollHeight'));
     });
 
     socket.on('joinResult', function(result) { //Print result of room change
-        var message;
+        var message = getTimestamp();
         if(result.success){
             $('#room').text(result.room);
-            message = result.message;
+            message += result.message;
             
         }
         else{
             $('#room').text(result.room);
-            message = result.message;
+            message += result.message;
         }
         $('#messages').append(divSystemContentElement(message));
         $('#messages').scrollTop($('#messages').prop('scrollHeight'));
     });
 
     socket.on('message', function(message) { //Print message
-        var newElement = $('<div></div>').text(message.text);
+        var newElement = $('<div></div>').text(getTimestamp() + message.text);
         $('#messages').append(newElement);
         $('#messages').scrollTop($('#messages').prop('scrollHeight'));
     });

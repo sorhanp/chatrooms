@@ -12,18 +12,17 @@ Changes from the original design:
     * Migration changed the [Default room][defaultroom_socketio] behavior. Socket.IO now creates a room with random, unguessable, unique identifier. Fixed this by leaving from the room when user connects
 
 * Features:
+    * Added client-side timestamps to messages (tested this with two browser that were set to two different time zones)
     * Block users trying to join same room again and inform about it on chat.
     * Differentiate first time connection with a function when joining the lobby, rather than using default room change-function
     * Display user names currently in current chat room
     * Added autoscrolling for application messages
     * Added autoscrolling for other users messages
     * Added highlight for your own messages
-
-
-Planned changes from the original design:
-* Features:
-    * Add timestamps to messages
-    * Add notification of users leaving a room
+    * Added notification of users leaving a room
+       * Display to which room was changed
     * Add notification of users leaving the chat
-    * Display to which room was changed
+
+An example screenshot of the program running:
+![Screenshot](docs/assets/screenshot.png)
 
